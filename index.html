@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070a19">
+<meta name="description" content="AlexGoldHEN — portal de identificação de firmware PS4 e seleção de rotas com OnyxAI.">
+<title>AlexGoldHEN — OnyxAI</title>
+<style>
+:root{--bg:#070a19;--panel:#111a34;--stroke:#35456a;--white:#f1f7ff;--muted:#a7b5d4;--blue:#68d8ff;--purple:#af91ff;--gold:#f7d38c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 10% 0%,#32307877,transparent 40%),radial-gradient(ellipse at 100% 23%,#055b8277,transparent 39%),var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#88aaff0a 1px,transparent 1px),linear-gradient(90deg,#88aaff0a 1px,transparent 1px);background-size:43px 43px}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}h1,h2,h3,p{margin-top:0}
+.wrap{max-width:1160px;padding:0 22px;margin:auto}
+header{border-bottom:1px solid #ffffff20;background:#080d1cbf}
+nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;gap:12px;align-items:center;font-size:20px;font-weight:900}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:3px}
+.mark{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:linear-gradient(130deg,#6148bb,#148fb8);border:1px solid #93d6ff99;box-shadow:0 0 18px #4089fa66;font-size:29px}
+.links{display:flex;align-items:center;gap:23px;font-size:13px;color:var(--muted)}.online{border:1px solid #4ab8a677;color:#85ebd8;background:#13353666;border-radius:40px;padding:9px 12px;white-space:nowrap;font-size:11px;font-weight:800}
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+.kicker{color:#9fd2ff;letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:800}
+h1{font-size:clamp(46px,6vw,76px);letter-spacing:-2.5px;line-height:1.02;margin:13px 0 21px}.gradient{background:linear-gradient(100deg,#87dcff,#a99cff,#e4b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{max-width:600px;color:var(--muted);line-height:1.75;font-size:16px}.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+.button{border:1px solid #6477a766;color:var(--white);background:#192342;border-radius:12px;padding:12px 18px;font-size:13px;font-weight:850;min-height:45px;display:inline-flex;align-items:center;justify-content:center}.button.primary{background:linear-gradient(110deg,#4367ff,#8953df);border:1px solid #8ba6ff;box-shadow:0 7px 29px #5b58d044}.button:disabled{cursor:not-allowed;opacity:.4}.button:hover:not(:disabled){filter:brightness(1.17)}
+.orbit{min-height:290px;position:relative;display:grid;place-items:center;overflow:hidden}.ring{position:absolute;border:1px solid #76b7ff88;width:280px;height:280px;border-radius:100%;transform:rotate(-37deg) scaleY(.56)}.ring.r2{width:325px;height:325px;transform:rotate(47deg) scaleY(.57);border-color:#9f77f788}.ring.r3{width:230px;height:230px;transform:rotate(88deg) scaleY(.55);border-color:#5cffff88}
+.core{width:144px;height:144px;display:grid;place-items:center;background:radial-gradient(circle at 24% 12%,#4c49ae,#142b62 61%,#0a0f23);border:1px solid #9f9aff99;border-radius:37px;box-shadow:0 0 38px #5e55e77c;font-size:70px;z-index:1}
+.decor{position:absolute;font-size:24px;text-shadow:0 0 15px #56acff;color:#b7d9ff}.decor.a{top:26px;left:28px}.decor.b{bottom:38px;right:33px}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:30px 0 18px}.heading h2{font-size:26px;letter-spacing:-.5px;margin:0 0 8px}.heading p{margin:0;color:var(--muted);font-size:13px}.tag{letter-spacing:2px;color:#87add9;font-size:10px;font-weight:900;white-space:nowrap}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.panel{border:1px solid #6579af66;border-radius:19px;background:#15203bbf;box-shadow:inset 0 1px 0 #c1d1ff11,0 20px 30px #0002;padding:25px;min-width:0}
+.panel-title{display:flex;align-items:center;gap:12px;margin-bottom:24px}.symbol{font-size:23px;display:grid;place-items:center;width:44px;height:44px;border:1px solid #6685bd66;background:#1f2d56;border-radius:13px}.panel-title strong{font-size:16px}.panel-title span:last-child{font-size:12px;color:var(--muted);display:block;margin-top:5px}
+label{display:block;font-size:12px;font-weight:800;color:#e0ecff;margin-bottom:9px}.form{display:flex;gap:9px}.form input{min-width:0;flex:1;background:#07152e;border:1px solid #556fa0;color:#fff;border-radius:11px;padding:13px 15px;font-size:16px;outline:none}.form input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #4fb9ff25}
+.help{color:var(--muted);line-height:1.65;font-size:12px;margin:11px 0 20px}.row{display:flex;flex-wrap:wrap;gap:9px}
+.output{margin-top:21px;background:#0b1830;border:1px solid #4f6b9f;border-radius:13px;padding:17px}.output small{color:#92aee0;letter-spacing:2px;font-weight:800;font-size:10px}.output strong{display:block;font-size:22px;color:#a4deff;margin:10px 0 5px}.output p{font-size:12px;color:#aec9eb;line-height:1.5;margin:4px 0}.output .warning{color:var(--gold);margin-top:9px}
+.terminal{background:#050b17;border:1px solid #364d72;border-radius:13px;padding:18px;height:270px;overflow:auto;font:12px/1.7 Consolas,monospace;color:#bbd9ef}.terminal-top{display:flex;gap:6px;align-items:center;border-bottom:1px solid #263a58;padding-bottom:12px;margin-bottom:12px;color:#85a5c9;font:10px Arial,sans-serif;letter-spacing:1.5px}.dot{width:8px;height:8px;background:#f68f9f;border-radius:50%}.dot:nth-child(2){background:#ffcc67}.dot:nth-child(3){background:#6fe4be}.terminal-top span{margin-left:9px}.log{padding-bottom:6px;word-break:break-word}.log:before{content:"› ";color:var(--blue)}.log.warn{color:var(--gold)}.log.ok{color:#79e7c9}.terminal-help{margin:13px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.routes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.route{color:var(--white);text-align:left;min-height:187px;padding:20px;background:linear-gradient(145deg,#1d2747,#11192f);border:1px solid #5c70a380;border-radius:17px;transition:transform .2s,border-color .2s}.route:hover,.route.active{border-color:#9ec5ff;transform:translateY(-2px)}.route.active{box-shadow:0 0 0 1px #8fb4ff66}.route .index{color:#94cef7;letter-spacing:2px;font-weight:850;font-size:10px}.route h3{margin:19px 0 9px;font-size:18px}.route .range{background:#153250;border:1px solid #3a6084;color:#9fe4ff;border-radius:7px;padding:5px 9px;display:inline-block;font-size:12px;font-weight:800}.route p{color:var(--muted);font-size:12px;line-height:1.55;margin:11px 0 0}
+.message{margin:20px 0 46px;border:1px solid #95744f;background:#42301860;padding:17px 19px;border-radius:13px;font-size:13px;line-height:1.7;color:#f2d7b3}
+footer{border-top:1px solid #43557655;padding:29px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:50px 0 28px}.orbit{min-height:210px}.ring{width:210px;height:210px}.ring.r2{width:240px;height:240px}.ring.r3{width:170px;height:170px}.core{width:117px;height:117px;font-size:59px}.grid{grid-template-columns:1fr}.routes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.wrap{padding:0 15px}.links a{display:none}.brand{font-size:17px}.heading h2{font-size:22px}.hero{padding-top:42px}h1{font-size:48px}.subtitle{font-size:14px}.panel{padding:18px}.routes{grid-template-columns:1fr}.route{min-height:157px}.heading .tag{display:none}.form{flex-wrap:wrap}.form .button{width:100%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><nav class="wrap"><a class="brand" href="#top"><span class="mark">♛</span><span>AlexGoldHEN<small>AlexSTORE • PLAYSTATION 4</small></span></a><div class="links"><a href="#detector">OnyxAI</a><a href="#rotas">Rotas</a><span class="online">● PORTAL ATIVO</span></div></nav></header>
+<main class="wrap" id="top">
+<section class="hero"><div><div class="kicker">Criado e codificado por Alexandre Games</div><h1>Bem-vindo ao<br><span class="gradient">AlexGoldHEN.</span></h1><p class="subtitle">Portal de diagnóstico e roteamento de firmwares PS4. Interface neon, seleção inteligente pelo OnyxAI e arquitetura pronta para integração futura de módulos testados.</p><div class="actions"><a class="button primary" href="#detector">Iniciar detecção</a><a class="button" href="#rotas">Explorar rotas</a></div></div><div class="orbit" aria-hidden="true"><span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span><span class="core">🎮</span><span class="decor a">✦</span><span class="decor b">✕</span></div></section>
+<section id="detector"><div class="heading"><div><h2>OnyxAI • Detector de firmware</h2><p>Identifica o navegador PS4 ou permite selecionar manualmente a versão.</p></div><span class="tag">SISTEMA 01</span></div>
+<div class="grid">
+<div class="panel"><div class="panel-title"><div class="symbol">◈</div><div><strong>Identificação inteligente</strong><span>Firmware e roteamento por versão</span></div></div><label for="fw">Versão de firmware do seu PS4</label><div class="form"><input id="fw" type="text" inputmode="decimal" maxlength="6" placeholder="Ex.: 13.52" autocomplete="off"><button class="button primary" id="analyze" type="button">Analisar</button></div><p class="help">Você encontra a versão em Configurações → Sistema → Informações do sistema. A detecção do navegador é aproximada e não substitui a conferência manual.</p><div class="row"><button class="button" id="autodetect" type="button">Detectar automaticamente</button><button class="button" id="copy" type="button">Copiar diagnóstico</button></div><div class="output" role="status" aria-live="polite"><small>ROTA IDENTIFICADA</small><strong id="routeTitle">Aguardando firmware</strong><p id="routeRange">Insira uma versão para identificar a categoria.</p><p class="warning" id="routeWarning">Nenhum exploit é executado por esta interface.</p></div></div>
+<div class="panel"><div class="panel-title"><div class="symbol">⌘</div><div><strong>Console de diagnóstico</strong><span>Registros reais • sem progresso fictício</span></div></div><div class="terminal" id="terminal"><div class="terminal-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>ALEXGOLDHEN / SYSTEM LOG</span></div><div id="logs" role="log" aria-live="polite"></div></div><div class="row" style="margin-top:15px"><button class="button primary" id="module" type="button" disabled>Verificar módulo da rota</button><button class="button" id="clear" type="button">Limpar log</button></div><p class="terminal-help" id="modStatus">O projeto não contém módulos executáveis de exploit.</p></div>
+</div></section>
+<section id="rotas" style="padding-top:45px"><div class="heading"><div><h2>Rotas AlexGoldHEN</h2><p>Faixas solicitadas para a organização da interface do projeto.</p></div><span class="tag">SISTEMA 02</span></div><div class="routes" id="routes">
+<button type="button" class="route" data-id="webkit"><span class="index">ROTA 01</span><h3>WebKIT</h3><span class="range">4.55–10.01</span><p>Família de métodos WebKit; requer exploração específica para cada firmware.</p></button>
+<button type="button" class="route" data-id="slopkit-base"><span class="index">ROTA 02</span><h3>SlopKIT BASE</h3><span class="range">11.00–13.00</span><p>Categoria planejada para módulos da família SlopKIT.</p></button>
+<button type="button" class="route" data-id="slopkit-relapse"><span class="index">ROTA 03</span><h3>SlopKIT Relapse</h3><span class="range">13.02–13.52</span><p>Categoria de exploração voltada à família Relapse.</p></button>
+<button type="button" class="route" data-id="afterglow"><span class="index">ROTA 04</span><h3>AfterGLOW</h3><span class="range">14.00–15.52</span><p>Faixa proposta, não validada integralmente por fontes públicas.</p></button>
+<button type="button" class="route" data-id="milkwalk-coffee"><span class="index">ROTA 05</span><h3>MilkWalk COFFEE</h3><span class="range">16.00–21.52</span><p>Nome reservado para pesquisa futura; sem módulo comprovado.</p></button>
+<button type="button" class="route" data-id="finale-universal"><span class="index">ROTA 06</span><h3>Finale Universal</h3><span class="range">22.xx+</span><p>Rota hipotética para versões futuras, sem compatibilidade demonstrada.</p></button>
+</div><noscript><p>O detector necessita de JavaScript habilitado.</p></noscript>
+<div class="message"><strong>Aviso de compatibilidade:</strong> as seis faixas acima são as categorias planejadas pelo projeto, não uma declaração de suporte efetivo. O desbloqueio não é universal. Versões acima de 14.00 — e especialmente as faixas MilkWalk COFFEE e Finale Universal — não têm comprovação pública de exploração conforme descritas aqui. O site não injeta payloads nem altera o console.</div>
+</section></main>
+<footer><div class="wrap foot"><span>♛ AlexGoldHEN • Portal PS4 brasileiro</span><span>AlexSTORE — O Império do PS3 e PS4 • Projeto independente, sem vínculo com Sony</span></div></footer>
+<script>
+(function(){
+'use strict';
+var R=[
+{id:'webkit',name:'WebKIT',min:455,max:1001,label:'4.55–10.01'},
+{id:'slopkit-base',name:'SlopKIT BASE',min:1100,max:1300,label:'11.00–13.00'},
+{id:'slopkit-relapse',name:'SlopKIT Relapse',min:1302,max:1352,label:'13.02–13.52'},
+{id:'afterglow',name:'AfterGLOW',min:1400,max:1552,label:'14.00–15.52'},
+{id:'milkwalk-coffee',name:'MilkWalk COFFEE',min:1600,max:2152,label:'16.00–21.52'},
+{id:'finale-universal',name:'Finale Universal',min:2200,max:99999,label:'22.xx+'}
+];
+var selected=null,firmware='',registered={};
+function $(id){return document.getElementById(id);}
+function info(msg,type){var e=document.createElement('div');e.className='log '+(type||'');e.appendChild(document.createTextNode(msg));$('logs').appendChild(e);if($('logs').children.length>28){$('logs').removeChild($('logs').children[0]);}$('terminal').scrollTop=$('terminal').scrollHeight;}
+function parseVersion(s){s=String(s||'').replace(',', '.').replace(/^\s+|\s+$/g,'');if(!/^\d{1,2}\.\d{2}$/.test(s)){return null;}var a=s.split('.');return{display:s,num:parseInt(a[0],10)*100+parseInt(a[1],10)};}
+function routeFor(n){var i;for(i=0;i<R.length;i++){if(n>=R[i].min&&n<=R[i].max)return R[i];}return null;}
+function notice(r,n){if(!r)return 'Nenhuma faixa configurada inclui este firmware.';if(n!==null&&n>=1402)return 'Compatibilidade não comprovada. Não confunda a rota proposta com exploit funcional.';return 'Categoria identificada. É necessário integrar e validar um módulo específico para executar qualquer exploit.';}
+function paint(){var bs=$('routes').getElementsByTagName('button'),i;for(i=0;i<bs.length;i++){var yes=!!selected&&bs[i].getAttribute('data-id')===selected.id;bs[i].className='route'+(yes?' active':'');bs[i].setAttribute('aria-pressed',yes?'true':'false');}}
+function apply(r,version,how){selected=r;firmware=version||'';$('routeTitle').textContent=r?r.name:'Nenhuma rota definida';$('routeRange').textContent=r?'Faixa proposta: '+r.label+(version?' • Firmware: '+version:''):'Versão fora dos intervalos cadastrados.';var p=parseVersion(version);$('routeWarning').textContent=notice(r,p?p.num:null);$('module').disabled=!r;$('modStatus').textContent=r?'Rota selecionada; nenhum exploit validado foi carregado.':'Aguardando a seleção de uma rota.';paint();if(how)info(how+': '+(version||'categoria manual')+' → '+(r?r.name:'sem correspondência'),r?'ok':'warn');}
+function analyze(){var v=parseVersion($('fw').value);if(!v){info('Formato incorreto: digite 13.52, por exemplo.','warn');$('fw').focus();return;}$('fw').value=v.display;apply(routeFor(v.num),v.display,'Análise');}
+function detect(){var ua=navigator.userAgent||'',isPS4=/PlayStation\s*4|PS4/i.test(ua),m=ua.match(/(?:PlayStation\s*4|PS4)[^;)]{0,35}?\b(\d{1,2}\.\d{2})\b/i);if(!isPS4){info('Navegador não identificado como PS4. Use a versão manual.','warn');return;}if(!m){info('PS4 detectado, mas o User-Agent não revelou o firmware.','warn');return;}$('fw').value=m[1];analyze();}
+var buttons=$('routes').getElementsByTagName('button'),i;
+for(i=0;i<buttons.length;i++){buttons[i].onclick=function(){var id=this.getAttribute('data-id'),j;for(j=0;j<R.length;j++){if(R[j].id===id){$('fw').value='';apply(R[j],'','Categoria selecionada');break;}}window.location.hash='detector';};}
+$('analyze').onclick=analyze;$('autodetect').onclick=detect;$('fw').onkeydown=function(ev){ev=ev||window.event;if(ev.keyCode===13||ev.key==='Enter')analyze();};
+$('module').onclick=function(){if(!selected)return;if(!firmware){info('Informe uma versão exata antes de verificar um módulo.','warn');return;}if(registered[selected.id]){info('Código de módulo registrado, mas execução indisponível sem validação de hardware.','warn');return;}info('Nenhum módulo executável para '+selected.name+' foi integrado. Nenhum exploit executado.','warn');$('modStatus').textContent='Módulo não encontrado. O portal nunca informa sucesso sem executar uma cadeia real.';};
+$('clear').onclick=function(){$('logs').textContent='';info('Log limpo.');};
+$('copy').onclick=function(){var t=document.createElement('textarea');t.value='AlexGoldHEN OnyxAI\nFirmware: '+(firmware||'indefinido')+'\nRota: '+(selected?selected.name:'indefinida')+'\nUser-Agent: '+(navigator.userAgent||'indisponível')+'\nExploit executado: não';t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(t);info(ok?'Diagnóstico copiado.':'Este navegador não oferece suporte à cópia automática.',ok?'ok':'warn');};
+window.AlexGoldHEN={version:'1.0.0',routes:R.slice(0),registerModule:function(id,fn){if(typeof fn!=='function')throw new Error('Módulo inválido');registered[id]=fn;}};
+info('AlexGoldHEN OnyxAI iniciado.');info('Painel de detecção preparado. Nenhum exploit carregado.');
+var ua=navigator.userAgent||'';if(/PlayStation\s*4|PS4/i.test(ua)){detect();}else{info('Modo manual disponível para PC e celular.');}
+})();
+</script>
+</body>
+</html>
